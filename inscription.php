@@ -26,7 +26,7 @@
              $email=$_POST['email'];
              $pass=$_POST['pass'];
              require_once('connect.php');
-            $query = "SELECT count(Id) as 'count' FROM compte where Email='".$email."'";
+            $query = "SELECT count(Id) as 'count' FROM users where Email='".$email."'";
             $r = @mysqli_query($dbc, $query);
             while($row=mysqli_fetch_array($r)){
                 if($row[0]!='0') {
@@ -37,7 +37,7 @@
                         echo'<label style="color: red" >Erreur,votre mot de pass est pas comme le premier</label>';
                       }
                       else{
-                        $sql = "INSERT INTO compte VALUES (null,'".$email."','".$pass."' , 'user')";
+                        $sql = "INSERT INTO users VALUES (null,'".$email."','".$pass."' , 'user')";
                         
                         if ($dbc->query($sql) === TRUE) {
                             header('Location: connexion.php');
