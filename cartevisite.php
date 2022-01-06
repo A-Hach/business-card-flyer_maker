@@ -142,7 +142,7 @@
                  $type=$_GET['type'];
                  $prix=0;
                  require_once('connect.php');
-                 $query = "SELECT Prixuni,img,descrip FROM produit where Categorie='".$type."' and Nom='".$nom."'";
+                 $query = "SELECT Prixuni,img,descrip FROM produits where Categorie='".$type."' and Nom='".$nom."'";
                  $r = @mysqli_query($dbc, $query);
                     $row = mysqli_fetch_row($r);
                     $prix=$row['0'];
