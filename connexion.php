@@ -33,7 +33,7 @@
             require_once('connect.php');
             $email=$_POST['email'];
             $pass=$_POST['pass'];
-            $query = "SELECT TypeUser,Id,count(Id) as 'count' FROM compte where Email='".$email."' and Pass='".$pass."' ";
+            $query = "SELECT TypeUser,Id,count(Id) as 'count' FROM users where Email='".$email."' and Pass='".$pass."' ";
             $r = @mysqli_query($dbc, $query);
 
 
